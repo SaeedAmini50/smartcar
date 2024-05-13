@@ -1,0 +1,269 @@
+ show databases;
+ create database smartcar;
+ use smartcar;
+show tables;
+
+
+
+
+
+create table admin (
+admin_ID int auto_increment unique,
+ admin_name VARCHAR(100),
+ admin_last_name VARCHAR(100),
+ email VARCHAR(100) PRIMARY KEY,
+ admin_phone VARCHAR(100),
+ Security_Question VARCHAR(100),
+ admin_answer VARCHAR(100),
+ password VARCHAR(100),
+ admin_date date);
+
+
+INSERT INTO admin (admin_name,admin_last_name,admin_phone,email,Security_Question,admin_answer,password,admin_date) VALUES (  'saeed', 'amini','0799999999','amini506750@gmail.com','what was your first car?','cars', 'saeed',now());
+
+
+
+
+
+
+CREATE TABLE customer (
+customer_ID int auto_increment unique,
+  customer_name VARCHAR(100)  ,
+  customer_last_name VARCHAR(100)  ,
+	customer_date date,
+  password VARCHAR(100)  );
+	   
+
+
+
+INSERT INTO customer (customer_name,customer_last_name,password,customer_date) VALUES ( 'saeed', 'amini','saeed',now());
+
+
+INSERT INTO customer (customer_name,customer_last_name,password,customer_date) VALUES ('omid', 'eman','omid',now());
+
+
+  
+  
+  
+  
+  
+ CREATE TABLE product_category (
+ category_name VARCHAR(100) PRIMARY KEY,
+ category_ID int auto_increment ,
+ unique (category_ID));
+ 
+ INSERT INTO  product_category (category_name,category_ID) VALUES (  'allproduct',1);
+INSERT INTO  product_category (category_name,category_ID) VALUES (  'testproduct',2);
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+CREATE TABLE product (
+product_name VARCHAR(100),
+product_port VARCHAR(100),
+product_explan VARCHAR(1000),
+product_mark VARCHAR(100),
+product_active varchar(3)  
+,product_ID INT auto_increment,
+category_ID int,
+PRIMARY KEY (product_ID),
+FOREIGN KEY (category_ID) REFERENCES product_category(category_ID));
+alter  table product alter column product_active set default 'yes';
+
+
+
+
+INSERT INTO product (product_name,product_port,product_explan ,product_mark,category_ID) VALUES ('فیلتر روغن',2630035505,'فیلتر روغن النترا با پارت نامبر HYUNDAI 2630035505 از قطعات یدکی مصرفی خودرو است. نمونه اصل و اورجینال وارداتی از برندGENUINE در فروشگاه قطعات یدکی خودر smart carبه فروش می‌رسد. این فیلتر روغن هیوندای النترا اصلی با کیفیت بسیار بالا برای موتور هیوندای النترا طراحی شده است. کاغذ موجود در این فیلتر روغن ذره‌های معلق در روغن موتور را جذب می‌کند. یکی از مشکلاتی که صاحبان خودرو هیوندای النترا دارند این است که فیلتر با کیفیت و اصل را با قیمت مناسب بخرند. تا آن را با خیال آسوده روی خودرو خود نصب کنند، تا سرویس بعدی خوردو مشکلی نداشته باشند و موتور خودرو آسیب نبیند', 'HYUNDAI',1);
+INSERT INTO product (product_name,product_port,product_explan ,product_mark,category_ID) VALUES ('کویل','273012B010','کویل با شماره قطعهHYUNDAI 27301 2B010 یکی از قطعات اصلی و حیاتی در سیستم تهویه داخلی خودروهای هیوندا است. این هواکش به عنوان یک بخش اساسی از سیستم تهویه، مسئولیت تأمین هوایی تمیز و تازه را برای مسافران و راننده فراهم می‌کند.این قطعه از خانواده سیستم تزریق و احتراق خودرو و وظیفه اصلی آن تامین ولتاژ بالا برای شمع موتور و ایجاد جرقه احتراق در سیلندر است،کویل برق ورودی خودرو 12 ولت را با استفاده از مدار و سیم پیچی مخصوص به ولتاژهای بالا حدود 10000 ولت میرساند،کویل ها دارای انواع مدل و شکل هستند،کویل تکی ،کویل دوتایی،کویل چهار تایی ،خودروساز با توجه به سیستم برق خودرو و مکانیزم احتراق یکی از مدل های کویل را انتخاب و نصب خواهد کرد
+', 'HYUNDAI',1);
+INSERT INTO product (product_name,product_port,product_explan ,product_mark,category_ID) VALUES ('شاتون','2351025250','محصول شاتون اصلی برای خودروی سانتافه مدل 2014 با برند جنیون پارت و تولید شده توسط شرکت موبیس، یکی از لوازم موتوری اصلی است که توسط کمپانی معتبر کره‌ای تولید شده است. این شاتون اصلی با کد فنی HYUNDAI 23510-25250 برای استفاده در خودروی سانتافه Santafe سال 2014 مناسب می‌باشد. به دلیل اصالت و کیفیت بالای این محصول، آن را به عنوان یک گزینه ایده‌آل برای تعمیرات و تعویض در خودروی شما توصیه می‌کنیم.
+
+', 'HYUNDAI',1);
+INSERT INTO product (product_name,product_port,product_explan ,product_mark,category_ID) VALUES ('هواکش','3C10028164','هواکش با شماره قطعه 3C100-28164 یکی از قطعات اصلی و حیاتی در سیستم تهویه داخلی خودروهای هیوندا است. این هواکش به عنوان یک بخش اساسی از سیستم تهویه، مسئولیت تأمین هوایی تمیز و تازه را برای مسافران و راننده فراهم می‌کند.', 'HYUNDAI',1);
+INSERT INTO product (product_name,product_port,product_explan ,product_mark,category_ID) VALUES ('فیلتر بنزین','311121R000','یلتر بنزین با شماره قطعه 31112-1R000 یکی از قطعات اصلی و حیاتی در سیستم تهویه داخلی خودروهای هیوندا است. این هواکش به عنوان یک بخش اساسی از سیستم تهویه، مسئولیت تأمین هوایی تمیز و تازه را برای مسافران و راننده فراهم می‌کند.
+قطعه فیلتر بنزین هیوندای با شماره قطعه HYUNDAI 31112-1R000 یک قطعه جنیون اصلی است که برای خودروهای هیوندای طراحی شده است. این فیلتر بنزین از طریق جدا کردن ذرات معلق و آلودگی ها از سوخت بنزین، موتور خودرو را در برابر خرابی و عملکرد نامناسب محافظت می کند. با تعویض منظم فیلتر بنزین، می توانید کارایی و عمر موتور خودرو را افزایش دهید و در عین حال مصرف سوخت را بهبود بخشید. در نتیجه، استفاده از فیلتر بنزین HYUNDAI 31112-1R000 جنیون اصلی می تواند به عملکرد بهتر و پایدارتر خودروی شما کمک کند.', 'HYUNDAI',1);
+INSERT INTO product (product_name,product_port,product_explan ,product_mark,category_ID) VALUES ('فیلتر بنزین','319102H000','یلتر بنزین با شماره قطعه31910 2H000 یکی از قطعات اصلی و حیاتی در سیستم تهویه داخلی خودروهای هیوندا است. این هواکش به عنوان یک بخش اساسی از سیستم تهویه، مسئولیت تأمین هوایی تمیز و تازه را برای مسافران و راننده فراهم می‌کند.
+قطعه فیلتر بنزین هیوندای با شماره قطعه HYUNDAI 31910 2H000 یک قطعه جنیون اصلی است که برای خودروهای هیوندای طراحی شده است. این فیلتر بنزین از طریق جدا کردن ذرات معلق و آلودگی ها از سوخت بنزین، موتور خودرو را در برابر خرابی و عملکرد نامناسب محافظت می کند. با تعویض منظم فیلتر بنزین، می توانید کارایی و عمر موتور خودرو را افزایش دهید و در عین حال مصرف سوخت را بهبود بخشید. در نتیجه، استفاده از فیلتر بنزین HYUNDAI 31910 2H000 جنیون اصلی می تواند به عملکرد بهتر و پایدارتر خودروی شما کمک کند.', 'HYUNDAI',1);
+
+
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+INSERT INTO product (product_name,product_port,product_explan ,product_mark,category_ID) VALUES ('فیلتر روغن',2630035505,'فیلتر روغن النترا با پارت نامبر HYUNDAI 2630035505 از قطعات یدکی مصرفی خودرو است. نمونه اصل و اورجینال وارداتی از برندGENUINE در فروشگاه قطعات یدکی خودر smart carبه فروش می‌رسد. این فیلتر روغن هیوندای النترا اصلی با کیفیت بسیار بالا برای موتور هیوندای النترا طراحی شده است. کاغذ موجود در این فیلتر روغن ذره‌های معلق در روغن موتور را جذب می‌کند. یکی از مشکلاتی که صاحبان خودرو هیوندای النترا دارند این است که فیلتر با کیفیت و اصل را با قیمت مناسب بخرند. تا آن را با خیال آسوده روی خودرو خود نصب کنند، تا سرویس بعدی خوردو مشکلی نداشته باشند و موتور خودرو آسیب نبیند', 'HYUNDAI',2);
+INSERT INTO product (product_name,product_port,product_explan ,product_mark,category_ID) VALUES ('کویل','273012B010','کویل با شماره قطعهHYUNDAI 27301 2B010 یکی از قطعات اصلی و حیاتی در سیستم تهویه داخلی خودروهای هیوندا است. این هواکش به عنوان یک بخش اساسی از سیستم تهویه، مسئولیت تأمین هوایی تمیز و تازه را برای مسافران و راننده فراهم می‌کند.این قطعه از خانواده سیستم تزریق و احتراق خودرو و وظیفه اصلی آن تامین ولتاژ بالا برای شمع موتور و ایجاد جرقه احتراق در سیلندر است،کویل برق ورودی خودرو 12 ولت را با استفاده از مدار و سیم پیچی مخصوص به ولتاژهای بالا حدود 10000 ولت میرساند،کویل ها دارای انواع مدل و شکل هستند،کویل تکی ،کویل دوتایی،کویل چهار تایی ،خودروساز با توجه به سیستم برق خودرو و مکانیزم احتراق یکی از مدل های کویل را انتخاب و نصب خواهد کرد
+', 'HYUNDAI',2);
+INSERT INTO product (product_name,product_port,product_explan ,product_mark,category_ID) VALUES ('شاتون','2351025250','محصول شاتون اصلی برای خودروی سانتافه مدل 2014 با برند جنیون پارت و تولید شده توسط شرکت موبیس، یکی از لوازم موتوری اصلی است که توسط کمپانی معتبر کره‌ای تولید شده است. این شاتون اصلی با کد فنی HYUNDAI 23510-25250 برای استفاده در خودروی سانتافه Santafe سال 2014 مناسب می‌باشد. به دلیل اصالت و کیفیت بالای این محصول، آن را به عنوان یک گزینه ایده‌آل برای تعمیرات و تعویض در خودروی شما توصیه می‌کنیم.
+
+', 'HYUNDAI',2);
+	   
+	   
+	   
+
+CREATE TABLE image(
+image_ID int AUTO_INCREMENT PRIMARY KEY,
+image_name VARCHAR(100),
+product_ID int ,
+image_active varchar(3),
+FOREIGN KEY (product_ID) REFERENCES product(product_ID));
+alter table image alter column image_active set default 'yes';
+INSERT INTO image (image_name,product_ID) VALUES ('2630035505/2630035505(1).jpeg',1);	   
+INSERT INTO image (image_name,product_ID) VALUES ('2630035505/2630035505(2).jpg',1);	   
+INSERT INTO image (image_name,product_ID) VALUES ('2630035505/2630035505(3).jpg',1);	   
+INSERT INTO image (image_name,product_ID) VALUES ('273012B010/273012B010(1).jpg',2);	   
+INSERT INTO image (image_name,product_ID) VALUES ('273012B010/273012B010(2).jpg',2);	   
+INSERT INTO image (image_name,product_ID) VALUES ('273012B010/273012B010(3).jpg',2);	   
+INSERT INTO image (image_name,product_ID) VALUES ('2351025250/2351025250(1).jpg',3);	   
+INSERT INTO image (image_name,product_ID) VALUES ('2351025250/2351025250(2).jpg',3);	   
+INSERT INTO image (image_name,product_ID) VALUES ('2351025250/2351025250(3).jpg',3);	   
+INSERT INTO image (image_name,product_ID) VALUES ('3C10028164/3C10028164(1).jpg',4);	   
+INSERT INTO image (image_name,product_ID) VALUES ('3C10028164/3C10028164(2).jpg',4);	   
+INSERT INTO image (image_name,product_ID) VALUES ('3C10028164/3C10028164(3).jpeg',4);	   
+INSERT INTO image (image_name,product_ID) VALUES ('311121R000/311121R000(1).webp',5);	   
+INSERT INTO image (image_name,product_ID) VALUES ('311121R000/311121R000(2).webp',5);	   
+INSERT INTO image (image_name,product_ID) VALUES ('311121R000/311121R000(3).webp',5);	   
+INSERT INTO image (image_name,product_ID) VALUES ('319102H000/319102H000(1).jpeg',6);	   
+INSERT INTO image (image_name,product_ID) VALUES ('319102H000/319102H000(2).jpeg',6);	   
+INSERT INTO image (image_name,product_ID) VALUES ('319102H000/319102H000(3).jpeg',6);	   
+	   
+	   
+	   
+	   
+	   
+
+
+
+
+CREATE TABLE wishList (
+  wishList_ID INT auto_increment PRIMARY KEY,
+  customer_ID INT ,
+  product_ID INT,
+  FOREIGN KEY (customer_ID) REFERENCES customer(customer_ID),
+FOREIGN KEY (product_ID) REFERENCES product(product_ID));
+
+
+INSERT INTO wishList (customer_ID,product_ID) VALUES (1,3);
+INSERT INTO wishList (customer_ID,product_ID) VALUES (2,5);
+INSERT INTO wishList (customer_ID,product_ID) VALUES (2,4);
+
+
+
+
+
+
+
+
+
+
+
+
+
+select table
+----------------------
+select * from admin;
+select * from customer;
+select * from product;
+select * from wishList;
+select * from product_category;
+
+
+
+
+
+
+desc table
+----------------------
+
+desc admin;
+desc customer;
+desc product ;
+desc wishList;
+desc product_category;
+desc image;
+
+
+
+
+drop table
+----------------------
+
+drop table wishList;
+drop table product_category;
+drop table customer;
+drop table product;
+drop table admin;
+drop table image;
+
+
+
+
+some query from other my project smartstore
+---------------------------------------------
+
+
+inner join
+---------------------
+
+SELECT *
+FROM customer
+INNER JOIN orders
+ON customer.customer_ID = orders.customer_ID;
+
+
+select * from image inner join product inner join product_category
+ on image.product_ID=product.product_ID and product_category.category_ID=product.category_ID  where product_category.category_ID=1 and image.product_ID=1 and product.product_ID=1;
+ 
+ 
+ 
+ 
+ SELECT *
+FROM product
+INNER JOIN order_item
+ON product.product_ID = order_item.product_ID where item_ID=1 ;
+ 
+ 
+ 
+
+
+update whit inner join
+-----------------------------------
+UPDATE cart INNER JOIN customer INNER JOIN product ON 
+cart.product_ID = product.product_ID and
+customer.customer_ID = cart.customer_ID
+ SET total_price_cart=55555,quantity_cart=5 
+where customer.email='saeedamini506750@gmail.com' and  product.product_ID=1 and cart.customer_ID=1 and cart.product_ID=5;
+
+
+
+
+
+search for mark product
+---------------------------
+select * from product where product_mark Like'philips';
+select * from product where product_mark Like'LG';
+select * from product where product_mark Like'sumsung';
+select * from product where product_mark Like'sumsung' and name_product Like'MACHIN';
+select * from product where product_mark Like'philips' and name_product Like'TV';
+
+
+
+search for product_size like inch product
+----------------------------------------
+select * from product where product_size Like'65 inch';
+select * from product where product_size  Like'65 inch' and product_mark  Like'EKO';
+
+
+
+
+
