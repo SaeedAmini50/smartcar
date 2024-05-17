@@ -214,6 +214,17 @@ some query from other my project smartstore
 
 inner join
 ---------------------
+SELECT *
+FROM product
+INNER JOIN image
+ON product.product_ID = image.product_ID;
+
+
+
+SELECT * FROM image INNER JOIN product
+ON product.product_ID = image.product_ID
+WHERE image.image_name LIKE '%(1)%';
+
 
 SELECT *
 FROM customer

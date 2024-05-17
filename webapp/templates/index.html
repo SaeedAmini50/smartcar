@@ -166,20 +166,21 @@
 							<!-- tab -->
 							<div id="tab1" class="tab-pane active">
 								<div class="products-slick" data-nav="#slick-nav-1">
+
+									{% for product in products %}
 									<!-- product -->
 									<div class="product">
 										<div class="product-img">
-											<img src="./img/product6.jpg" alt="">
+											<img src="{{ url_for('static', filename='img/' + product['image_name']) }}" alt="">
 											<div class="product-label">
 												<span class="sale">-30%</span> <span class="new">NEW</span>
 											</div>
 										</div>
 										<div class="product-body">
-											<p class="product-sumsong">تلویزیون</p>
-											<h3 class="product-name">
-												<a href="#">pilips 65 inch</a>
-											</h3>
-
+										    <p class="product-sumsong">{{ product['product_mark'] }}</p>
+                    <h3 class="product-name"><a href="#">{{ product['product_name'] }}</a></h3>
+                    <p class="product-explan">{{ product['product_port'] }}</p>
+                    
 											<div class="product-rating">
 												<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 													class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -187,222 +188,24 @@
 											</div>
 											<div class="product-btns">
 												<button class="add-to-wishlist">
-													<i class="fa fa-heart-o"></i><span class="tooltipp">add
-														to wishlist</span>
+													<i class="fa fa-heart-o"></i><span class="tooltipp">اضاهه کردن به لیست دلخواه</span>
 												</button>
-												<button class="add-to-compare">
-													<i class="fa fa-exchange"></i><span class="tooltipp">add
-														to compare</span>
-												</button>
+												
 												<button class="quick-view">
-													<i class="fa fa-eye"></i><span class="tooltipp">quick
-														view</span>
+													<i class="fa fa-eye"></i><span class="tooltipp">نمایش محصول
+														</span>
 												</button>
 											</div>
 										</div>
 										<div class="add-to-cart">
 											<button class="add-to-cart-btn">
-												<i class="fa fa-shopping-cart"></i> add to cart
+												<i class="fa fa-shopping-cart"></i>نمایش محصول
 											</button>
 										</div>
 									</div>
-									<!-- /product -->
-
-									<!-- product -->
-									<div class="product">
-										<div class="product-img">
-											<img src="./img/product2.jpg" alt="">
-											<div class="product-label">
-												<span class="new">NEW</span>
-											</div>
-										</div>
-										<div class="product-body">
-											<p class="product-sumsong">تلویزیون</p>
-											<h3 class="product-name">
-												<a href="#">pilips 65 inch</a>
-											</h3>
-
-											<div class="product-rating">
-												<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-													class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-													class="fa fa-star-o"></i>
-											</div>
-											<div class="product-btns">
-												<button class="add-to-wishlist">
-													<i class="fa fa-heart-o"></i><span class="tooltipp">add
-														to wishlist</span>
-												</button>
-												<button class="add-to-compare">
-													<i class="fa fa-exchange"></i><span class="tooltipp">add
-														to compare</span>
-												</button>
-												<button class="quick-view">
-													<i class="fa fa-eye"></i><span class="tooltipp">quick
-														view</span>
-												</button>
-											</div>
-										</div>
-										<div class="add-to-cart">
-											<button class="add-to-cart-btn">
-												<i class="fa fa-shopping-cart"></i> add to cart
-											</button>
-										</div>
-									</div>
-									<!-- /product -->
-
-									<!-- product -->
-									<div class="product">
-										<div class="product-img">
-											<img src="./img/product3.jpeg" alt="">
-											<div class="product-label">
-												<span class="sale">-30%</span>
-											</div>
-										</div>
-										<div class="product-body">
-											<p class="product-sumsong">تلویزیون</p>
-											<h3 class="product-name">
-												<a href="#">pilips 65 inch</a>
-											</h3>
-
-											<div class="product-rating"></div>
-											<div class="product-btns">
-												<button class="add-to-wishlist">
-													<i class="fa fa-heart-o"></i><span class="tooltipp">add
-														to wishlist</span>
-												</button>
-												<button class="add-to-compare">
-													<i class="fa fa-exchange"></i><span class="tooltipp">add
-														to compare</span>
-												</button>
-												<button class="quick-view">
-													<i class="fa fa-eye"></i><span class="tooltipp">quick
-														view</span>
-												</button>
-											</div>
-										</div>
-										<div class="add-to-cart">
-											<button class="add-to-cart-btn">
-												<i class="fa fa-shopping-cart"></i> add to cart
-											</button>
-										</div>
-									</div>
-									<!-- /product -->
-
-									<!-- product -->
-									<div class="product">
-										<div class="product-img">
-											<img src="./img/product6.jpg" alt="">
-											<div class="product-label">
-												<span class="sale">-30%</span>
-											</div>
-										</div>
-										<div class="product-body">
-											<p class="product-sumsong">تلویزیون</p>
-											<h3 class="product-name">
-												<a href="#">pilips 65 inch</a>
-											</h3>
-
-											<div class="product-rating"></div>
-											<div class="product-btns">
-												<button class="add-to-wishlist">
-													<i class="fa fa-heart-o"></i><span class="tooltipp">add
-														to wishlist</span>
-												</button>
-												<button class="add-to-compare">
-													<i class="fa fa-exchange"></i><span class="tooltipp">add
-														to compare</span>
-												</button>
-												<button class="quick-view">
-													<i class="fa fa-eye"></i><span class="tooltipp">quick
-														view</span>
-												</button>
-											</div>
-										</div>
-										<div class="add-to-cart">
-											<button class="add-to-cart-btn">
-												<i class="fa fa-shopping-cart"></i> add to cart
-											</button>
-										</div>
-									</div>
-									<!-- /product -->
-
-
-									<!-- product -->
-									<div class="product">
-										<div class="product-img">
-											<img src="./img/product4.jpeg" alt="">
-										</div>
-										<div class="product-body">
-											<p class="product-sumsong">تلویزیون</p>
-											<h3 class="product-name">
-												<a href="#">pilips 65 inch</a>
-											</h3>
-
-											<div class="product-rating">
-												<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-													class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-													class="fa fa-star"></i>
-											</div>
-											<div class="product-btns">
-												<button class="add-to-wishlist">
-													<i class="fa fa-heart-o"></i><span class="tooltipp">add
-														to wishlist</span>
-												</button>
-												<button class="add-to-compare">
-													<i class="fa fa-exchange"></i><span class="tooltipp">add
-														to compare</span>
-												</button>
-												<button class="quick-view">
-													<i class="fa fa-eye"></i><span class="tooltipp">quick
-														view</span>
-												</button>
-											</div>
-										</div>
-										<div class="add-to-cart">
-											<button class="add-to-cart-btn">
-												<i class="fa fa-shopping-cart"></i> add to cart
-											</button>
-										</div>
-									</div>
-									<!-- /product -->
-
-									<!-- product -->
-									<div class="product">
-										<div class="product-img">
-											<img src="./img/product5.webp" alt="">
-										</div>
-										<div class="product-body">
-											<p class="product-sumsong">تلویزیون</p>
-											<h3 class="product-name">
-												<a href="#">pilips 65 inch</a>
-											</h3>
-
-											<div class="product-rating">
-												<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-													class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-													class="fa fa-star"></i>
-											</div>
-											<div class="product-btns">
-												<button class="add-to-wishlist">
-													<i class="fa fa-heart-o"></i><span class="tooltipp">add
-														to wishlist</span>
-												</button>
-												<button class="add-to-compare">
-													<i class="fa fa-exchange"></i><span class="tooltipp">add
-														to compare</span>
-												</button>
-												<button class="quick-view">
-													<i class="fa fa-eye"></i><span class="tooltipp">quick
-														view</span>
-												</button>
-											</div>
-										</div>
-										<div class="add-to-cart">
-											<button class="add-to-cart-btn">
-												<i class="fa fa-shopping-cart"></i> add to cart
-											</button>
-										</div>
-									</div>
+									
+								
+								{%endfor%}
 									<!-- /product -->
 								</div>
 								<div id="slick-nav-1" class="products-slick-nav"></div>
