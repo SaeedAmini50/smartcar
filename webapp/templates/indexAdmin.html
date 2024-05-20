@@ -21,21 +21,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="libAdmin/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="libAdmin/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="" rel="stylesheet">
+    <link href="{{ url_for('static', filename='libAdmin/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet" />
 
    <!-- Customized Bootstrap Stylesheet -->
-    <link href="cssAdmin/bootstrap.min.css" rel="stylesheet">
+    <link href="  {{ url_for('static', filename='cssAdmin/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="cssAdmin/style.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='cssAdmin/style.css') }}" rel="stylesheet">
     
 </head>
 
 <body>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Spinner Start -->
-        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div id="spinner" class=" bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
@@ -62,7 +62,6 @@
                 <div class="navbar-nav w-100">
                     <a href="index.html" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>صحفه اصلی</a>
                     <a href="index.html" class="nav-item nav-link "><i class="fa fa-user me-2"></i>صحفه ویب سایت</a>
-                   
                    
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>تغییرات در  ویب سایت </a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>نمایش اطلاعات</a>

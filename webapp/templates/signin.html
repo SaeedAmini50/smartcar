@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="utf-8">
     <title>Admin panel smart store</title>
@@ -21,14 +22,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="libAdmin/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="libAdmin/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="" rel="stylesheet">
+    <link href="{{ url_for('static', filename='libAdmin/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet" />
 
    <!-- Customized Bootstrap Stylesheet -->
-    <link href="cssAdmin/bootstrap.min.css" rel="stylesheet">
+    <link href="  {{ url_for('static', filename='cssAdmin/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="cssAdmin/style.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='cssAdmin/style.css') }}" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -82,17 +84,25 @@
         </div>
         <!-- Sign In End -->
     </div>
+    
+    
+    
+    
+    
+    
+   
+    
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="libAdmin/chart/chart.min.js"></script>
-    <script src="libAdmin/easing/easing.min.js"></script>
-    <script src="libAdmin/waypoints/waypoints.min.js"></script>
-    <script src="libAdmin/owlcarousel/owl.carousel.min.js"></script>
-    <script src="libAdmin/tempusdominus/js/moment.min.js"></script>
-    <script src="libAdmin/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="libAdmin/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src=" {{ url_for('static', filename='{{ url_for('static', filename='https://code.jquery.com/jquery-3.4.1.min.js') }}') }}"></script>
+    <script src="{{ url_for('static', filename='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='libAdmin/chart/chart.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='libAdmin/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='libAdmin/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='libAdmin/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='libAdmin/tempusdominus/js/moment.min.js') }}"></script>
+    <script src=" {{ url_for('static', filename='libAdmin/tempusdominus/js/moment-timezone.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='libAdmin/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 
     <!-- Template Javascript -->
     <script src="jsAdmin/main.js"></script>

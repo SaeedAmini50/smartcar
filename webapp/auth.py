@@ -17,3 +17,7 @@ def sing_up():
 @auth.route('/show_product')
 def show_product():
     return render_template("show_product.html")  
+
+@auth.route('/indexAdmin.html')
+def indexAdmin():
+    return render_template("indexAdmin.html")  
