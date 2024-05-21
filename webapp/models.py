@@ -40,3 +40,13 @@ def get_product_by_id(product_id):
     if product and 'images' in product:
         product['images'] = product['images'].split(',')
     return product
+
+def get_all_products():
+    connection = get_db_connection()
+    cursor = connection.cursor(dictionary=True)
+    query = """SELECT * FROM product;"""
+    cursor.execute(query)
+    product = cursor.fetchall()
+    cursor.close()
+    connection.close()
+    return product
