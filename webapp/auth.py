@@ -47,7 +47,7 @@ def signup():
             cnx.close()
 
             session['email'] = customer_email
-            return redirect(url_for('index'))
+            return redirect(url_for('views.index'))
         except mysql.connector.Error as err:
             print(err)
             return redirect(url_for('auth.signup', msg='error'))
@@ -74,7 +74,7 @@ def signin():
 
             if result:
                 session['email'] = customer_email
-                return redirect(url_for('index'))
+                return redirect(url_for('views.index'))
             else:
                 return redirect(url_for('auth.signin', msg='invalid'))
         except mysql.connector.Error as err:
