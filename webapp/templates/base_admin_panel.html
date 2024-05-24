@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <title>Admin panel smart store</title>
@@ -271,17 +270,22 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
+    
 
+   
+   
+    
+    
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="libAdmin/chart/chart.min.js"></script>
-    <script src="libAdmin/easing/easing.min.js"></script>
-    <script src="libAdmin/waypoints/waypoints.min.js"></script>
-    <script src="libAdmin/owlcarousel/owl.carousel.min.js"></script>
-    <script src="libAdmin/tempusdominus/js/moment.min.js"></script>
-    <script src="libAdmin/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="libAdmin/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="{{ url_for('static', filename='libAdmin/chart/chart.min.js') }}"></script>
+    <script src=" {{ url_for('static', filename='libAdmin/easing/easing.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='libAdmin/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='libAdmin/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src=" {{ url_for('static', filename='libAdmin/tempusdominus/js/moment.min.js') }}"></script>
+    <script src=" {{ url_for('static', filename='libAdmin/tempusdominus/js/moment-timezone.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='libAdmin/tempusdominus/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 
     <!-- Template Javascript -->
       <script src="jsAdmin/main.js"></script>

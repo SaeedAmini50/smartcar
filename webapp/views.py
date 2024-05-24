@@ -19,3 +19,4 @@ def show_product(product_id):
 def show_all_products():
     product = get_all_products()
     return render_template('a_p_show_all_products.html', product=product)
+

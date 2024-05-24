@@ -8,10 +8,10 @@ show tables;
 
 
 create table admin (
-admin_ID int auto_increment unique,
+admin_ID int auto_increment PRIMARY KEY ,
  admin_name VARCHAR(100),
  admin_last_name VARCHAR(100),
- email VARCHAR(100) PRIMARY KEY,
+ email VARCHAR(100) unique,
  admin_phone VARCHAR(100),
  Security_Question VARCHAR(100),
  admin_answer VARCHAR(100),
@@ -27,20 +27,17 @@ INSERT INTO admin (admin_name,admin_last_name,admin_phone,email,Security_Questio
 
 
 CREATE TABLE customer (
-customer_ID int auto_increment unique,
-  customer_name VARCHAR(100)  ,
-  customer_last_name VARCHAR(100)  ,
+customer_ID int auto_increment PRIMARY KEY,
+  customer_name_and_last_name  VARCHAR(100)  ,
+  email VARCHAR(100) unique,
+  customer_number VARCHAR(100) ,
 	customer_date date,
   password VARCHAR(100)  );
 	   
 
 
 
-INSERT INTO customer (customer_name,customer_last_name,password,customer_date) VALUES ( 'saeed', 'amini','saeed',now());
-
-
-INSERT INTO customer (customer_name,customer_last_name,password,customer_date) VALUES ('omid', 'eman','omid',now());
-
+INSERT INTO customer (customer_name_and_last_name,password,customer_number,email,customer_date) VALUES ( 'saeed amini','saeed','09044861768','saeedamini506750@gmail.com',now());
 
   
   
@@ -53,6 +50,12 @@ INSERT INTO customer (customer_name,customer_last_name,password,customer_date) V
  unique (category_ID));
  
  INSERT INTO  product_category (category_name,category_ID) VALUES (  'allproduct',1);
+
+
+
+
+
+
 INSERT INTO  product_category (category_name,category_ID) VALUES (  'testproduct',2);
 
 

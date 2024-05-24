@@ -1,15 +1,8 @@
 # models.py
-import mysql.connector
-from .mydb import database
+from webapp.mydb import get_db
 
 def get_db_connection():
-    connection = mysql.connector.connect(
-        host=database['host'],
-        user=database['user'],
-        password=database['password'],
-        database=database['database']
-    )
-    return connection
+    return get_db()
 
 def get_products_ending_with_a():
     connection = get_db_connection()
