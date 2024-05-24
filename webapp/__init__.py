@@ -1,11 +1,11 @@
 # __init__.py
 from flask import Flask
-from .mydb import database
+from .config import DB_CONFIG
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'dlskfjlkos sodijflsaiuro'
-    app.config['DATABASE_CONFIG'] = database
+    app.config['DATABASE_CONFIG'] = DB_CONFIG
 
     from .views import views
     from .auth import auth

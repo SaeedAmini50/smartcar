@@ -1,15 +1,8 @@
 # models.py
-import mysql.connector
-from .mydb import database
+from webapp.mydb import get_db
 
 def get_db_connection():
-    connection = mysql.connector.connect(
-        host=database['host'],
-        user=database['user'],
-        password=database['password'],
-        database=database['database']
-    )
-    return connection
+    return get_db()
 
 def get_products_ending_with_a():
     connection = get_db_connection()
@@ -39,4 +32,14 @@ def get_product_by_id(product_id):
     connection.close()
     if product and 'images' in product:
         product['images'] = product['images'].split(',')
+    return product
+
+def get_all_products():
+    connection = get_db_connection()
+    cursor = connection.cursor(dictionary=True)
+    query = """SELECT * FROM product;"""
+    cursor.execute(query)
+    product = cursor.fetchall()
+    cursor.close()
+    connection.close()
     return product
