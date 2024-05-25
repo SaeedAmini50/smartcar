@@ -1,5 +1,5 @@
 # views.py
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template,session
 from .models import get_products_ending_with_a, get_product_by_id,get_all_products
 
 views = Blueprint('views', __name__)
@@ -7,7 +7,9 @@ views = Blueprint('views', __name__)
 @views.route('/')
 def index():
     products = get_products_ending_with_a()
-    return render_template("index.html", products=products)
+    email = session.get('email')
+    return render_template("index.html", products=products,email=email)
+
 
 @views.route('/product/<int:product_id>')
 def show_product(product_id):
