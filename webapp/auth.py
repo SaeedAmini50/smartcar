@@ -12,7 +12,7 @@ auth= Blueprint('auth', __name__)
 def show_product():
     return render_template("show_product.html")  
 
-@auth.route('/indexAdmin.html')
+@auth.route('/indexAdmin')
 def indexAdmin():
     return render_template("indexAdmin.html")  
 
