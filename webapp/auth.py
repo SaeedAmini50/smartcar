@@ -1,15 +1,18 @@
-from flask import Blueprint, render_template, request, redirect, url_for, session
+from flask import Blueprint, render_template, request, redirect, url_for, session,flash
 from webapp.mydb import get_db
 import hashlib
 from datetime import datetime
 import mysql.connector
 auth= Blueprint('auth', __name__)
 
+
+
+
 @auth.route('/show_product')
 def show_product():
     return render_template("show_product.html")  
 
-@auth.route('/indexAdmin.html')
+@auth.route('/indexAdmin')
 def indexAdmin():
     return render_template("indexAdmin.html")  
 
