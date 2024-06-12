@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, redirect, url_for, sessio
 from webapp.mydb import get_db
 import hashlib
 from datetime import datetime
+from .decorators import admin_required
 import mysql.connector
 auth= Blueprint('auth', __name__)
 
@@ -85,3 +86,9 @@ def signin():
             return redirect(url_for('auth.signin', msg='error'))
 
     return render_template('signin.html')
+
+
+@auth.route('/indexAdmin')
+@admin_required
+def indexAdmin():
+    return render_template("indexAdmin.html")
