@@ -9,17 +9,16 @@ show tables;
 
 create table admin (
 admin_ID int auto_increment PRIMARY KEY ,
- admin_name VARCHAR(100),
- admin_last_name VARCHAR(100),
+ admin_name_and_last_name VARCHAR(100),
  email VARCHAR(100) unique,
  admin_phone VARCHAR(100),
- Security_Question VARCHAR(100),
- admin_answer VARCHAR(100),
  password VARCHAR(100),
  admin_date date);
 
 
-INSERT INTO admin (admin_name,admin_last_name,admin_phone,email,Security_Question,admin_answer,password,admin_date) VALUES (  'saeed', 'amini','0799999999','amini506750@gmail.com','what was your first car?','cars', 'saeed',now());
+INSERT INTO admin (admin_name_and_last_name,admin_phone,email,password,admin_date) VALUES ('saeed amini','0799999999','amini506750@gmail.com','saeed',now());
+
+
 
 
 
